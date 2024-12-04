@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "../src/randgen.cpp"
 
-#define SIZE 8
+#define SIZE 4096
 
 int main(int argc, char **argv)
 {
@@ -13,6 +13,7 @@ int main(int argc, char **argv)
 	
 	for(int i = 0; i < PULL; i++){
 		err = generate_randnum(data[i], SIZE);
+		printf("%d\n", i);
 		if(err != 0){
 			printf("Error\n");
 			return 2;
@@ -21,18 +22,10 @@ int main(int argc, char **argv)
 	
 	FILE* ff;
 	
-	ff = fopen("numbers.txt","w");
+	ff = fopen("numbers.txt","wb");
 	for(int i = 0; i < PULL; i++){
-		for(int j = 0; j < SIZE; j++){
-			for (int k = 0; k < 8; k++)
-			{
-				if (data[i][j] & 0x80)
-					fprintf(ff, "1");
-				else
-					fprintf(ff, "0");
-				data[i][j] = data[i][j] << 1;
-			}
-		}
+		fwrite(data[i], (size_t) SIZE*8, 1, ff);
+		fprintf(ff, "\n");
 	}
 	fclose(ff);
 	return 0;
