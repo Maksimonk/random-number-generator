@@ -5,17 +5,21 @@ RESULTS FOR THE UNIFORMITY OF P-VALUES AND THE PROPORTION OF PASSING SEQUENCES
 ------------------------------------------------------------------------------
  C1  C2  C3  C4  C5  C6  C7  C8  C9 C10  P-VALUE  PROPORTION  STATISTICAL TEST
 ------------------------------------------------------------------------------
-  4  15  14  11  19   0  13   0  11  13  0.000019 *  100/100     Frequency
-  6   9  15   2  12   9   9  14  13  11  0.129620    100/100     CumulativeSums
-  6   7  16   9  12   6  13  12  12   7  0.289667     99/100     CumulativeSums
- 10  14   8   8  14   7   7  10  17   5  0.153763     99/100     Runs
-100   0   0   0   0   0   0   0   0   0  0.000000 *    0/100  *  LongestRun
+786  69  29  22  22  25  15  12   9  11  0.000000 *  470/1000 *  Frequency
+249 117 102  92  68  61  61  66  80 104  0.000000 *  908/1000 *  BlockFrequency
+760  75  47  22  14  21  14  19  15  13  0.000000 *  480/1000 *  CumulativeSums
+769  72  42  28  20  16  11  10  10  22  0.000000 *  482/1000 *  CumulativeSums
+562  72  72  55  51  38  37  38  39  36  0.000000 *  618/1000 *  Runs
+535  96  69  59  64  43  48  33  26  27  0.000000 *  721/1000 *  LongestRun
+171  30 133  69 207  81 194   0   0 115  0.000000 *  950/1000 *  Rank
+376 137 115  82  64  63  55  57  38  13  0.000000 *  824/1000 *  OverlappingTemplate
+149  79  90  91  86  71  78 110 148  98  0.000000 *  931/1000 *  LinearComplexity
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 The minimum pass rate for each statistical test with the exception of the
-random excursion (variant) test is approximately = 96 for a
-sample size = 100 binary sequences.
+random excursion (variant) test is approximately = 980 for a
+sample size = 1000 binary sequences.
 
 For further guidelines construct a probability table using the MAPLE program
 provided in the addendum section of the documentation.

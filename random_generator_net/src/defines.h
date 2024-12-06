@@ -5,7 +5,7 @@
 #include <cstring>
 #include <string>
 
-#define SIZE 8
+#define SIZE 1024
 #define BUFFSIZE 3000
 
 int sniff_packet(std::string* result);
