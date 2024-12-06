@@ -1,4 +1,4 @@
-# Generation of Random Values Based on System Parameters
+# Generation of Random Values Based on Desktop Parameters
 ## Project Description
 This project aims to create a random value generator based on various system parameters such as disk read/write speed, processor temperature fluctuations, and network activity of the device. We use these parameters to generate the final random value and verify its randomness using NIST tests.
 
