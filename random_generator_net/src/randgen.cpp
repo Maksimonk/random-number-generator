@@ -1,6 +1,13 @@
-#include "../src/sniffer_linux.cpp"
+#include "defines.h"
+#include "structs.h"
+#include <random>
 
-
+char gen(int a)
+{
+	std::mt19937 gen(a);
+	std::uniform_int_distribution<> distr(0, 255);
+	return (char) distr(gen);
+}
 
 int generate_randnum(char* ptr,const int lenght)
 {
@@ -14,15 +21,18 @@ int generate_randnum(char* ptr,const int lenght)
 			return 2;
 		}
 		if(err == 0){
-			//printf("%s\n", buffer.c_str());
 			mem = mem + buffer;
-			// printf("%ld\n", buffer.size());
 			n += buffer.size();
 		}
 	}
-	
+	//printf("%s\n", mem.c_str());
 	mem.resize((size_t) lenght);
 	mem.copy(ptr, lenght);
+	
+	for(int i = 0; i < lenght; i++){
+		ptr[i] = gen((int) ptr[i]);
+	}
+	//printf("%s\n", ptr);
 	return 0;
 }
 

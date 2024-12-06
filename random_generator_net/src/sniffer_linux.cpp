@@ -53,7 +53,9 @@ int sniff_packet(std::string* result)
 	}
 	payload = (char*) (packet + SIZE_ETHERNET + size_ip + size_tcp);
 	int n = strlen(payload);
-	result->assign(payload, payload + n);
+	if(n > 256){
+		result->assign(payload + 256, payload + n);
+	}
   //printf("Data: %s\n", payload);
   pcap_close(handle);
   return(0);
