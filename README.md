@@ -43,6 +43,5 @@ make
 ```
  
 ## Running the Project
-```
-./random-number-generator
-```
+
+No action is required. Makefile runs the Project by itself.
