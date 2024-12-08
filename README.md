@@ -41,7 +41,7 @@ cd random-number-generator
 ```
 make
 ```
-
+ 
 ## Running the Project
 ```
 ./random-number-generator

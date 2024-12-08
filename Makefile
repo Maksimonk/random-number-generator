@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++11
 
-SRC = src/generator.cpp
+SRC = $(wildcard src/*.cpp)
 
 TARGET = generator.exe
 
@@ -14,6 +14,4 @@ run: $(TARGET)
 	./$(TARGET)
 
 clean:
-	del *.exe
-	del *.txt
-
+	del generator.exe file_output.txt
