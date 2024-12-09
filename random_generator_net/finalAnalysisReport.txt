@@ -10,6 +10,7 @@ RESULTS FOR THE UNIFORMITY OF P-VALUES AND THE PROPORTION OF PASSING SEQUENCES
 149  67  88  55  50  56  35   0   0   0  0.000000 *  481/500  *  CumulativeSums
 117  46  88  16  58  23  68  35  42   7  0.000000 *  490/500     CumulativeSums
  73  53  55  52  59  33  64  33  40  38  0.000117    489/500     Runs
+  0   0   0   0   0   0   0   0   0 500  0.000000 *  500/500     ApproximateEntropy
  11   0   0   0 478   0   0   0   0  11  0.000000 *  489/500     Serial
  27   0   0   0 457   0   0   0   0  16  0.000000 *  473/500  *  Serial
 
