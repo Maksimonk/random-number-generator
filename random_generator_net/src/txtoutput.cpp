@@ -3,7 +3,7 @@
 #include "defines.h"
 #include "structs.h"
 
-#define BITFILE
+//#define BITFILE
 
 int main(int argc, char **argv)
 {
@@ -23,21 +23,17 @@ int main(int argc, char **argv)
 	}
 	unsigned long long int* a;
 	FILE* ff;
-	#ifdef BITFILE
-		ff = fopen("bitnumber","wb");
-		for(int i = 0; i < PULL; i++){
-			fwrite(data[i], sizeof(char), SIZE, ff);
-		}
-		fclose(ff);
-	#endif
-	#ifndef BITFILE
-		ff = fopen("numbers.txt","w");
-		for(int i = 0; i < PULL; i++){
-			a = (unsigned long long int*) data[i];
-			fprintf(ff, "%lld\n", *a);
-		}
-		fclose(ff);
-	#endif
+	ff = fopen("bitnumber","wb");
+	for(int i = 0; i < PULL; i++){
+		fwrite(data[i], sizeof(char), SIZE, ff);
+	}
+	fclose(ff);
+	ff = fopen("numbers.txt","w");
+	for(int i = 0; i < PULL; i++){
+		a = (unsigned long long int*) data[i];
+		fprintf(ff, "%lld\n", *a);
+	}
+	fclose(ff);
 	return 0;
 }
 

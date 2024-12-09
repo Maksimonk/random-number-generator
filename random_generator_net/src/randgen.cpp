@@ -2,11 +2,11 @@
 #include "structs.h"
 #include <random>
 
-char gen(int a)
+char gen(int a, int iter)
 {
-	std::mt19937 gen(a);
-	std::uniform_int_distribution<> distr(0, 255);
-	return (char) distr(gen);
+	for(int i = 0; i < iter; i++){
+		return (char) (a * 127 + 57);
+	}
 }
 
 int generate_randnum(char* ptr,const int lenght)
@@ -30,7 +30,7 @@ int generate_randnum(char* ptr,const int lenght)
 	mem.copy(ptr, lenght);
 	
 	for(int i = 0; i < lenght; i++){
-		ptr[i] = gen((int) ptr[i]);
+		ptr[i] = gen((int) ptr[i], i);
 	}
 	//printf("%s\n", ptr);
 	return 0;
