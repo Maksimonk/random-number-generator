@@ -5,8 +5,6 @@
 #include "moveFile.h"
 
 #if defined(_WIN32)
-    #include "windows.h"
-    #include <shellapi.h>
 #else 
     #error "Unsupported OS"
 #endif

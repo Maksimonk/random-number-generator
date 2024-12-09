@@ -1,7 +1,9 @@
 #include "moveFile.h"
+#include "removeFile.h"
 
 // TODO: chrono type and return the result after moving?
 void moveFile(const std::string& sourcePath, const std::string& destinationPath) {
+    removeFile(destinationPath);
     auto start = std::chrono::high_resolution_clock::now();
 
     if (std::rename(sourcePath.c_str(), destinationPath.c_str()) != 0) {
