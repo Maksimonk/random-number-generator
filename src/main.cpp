@@ -3,6 +3,7 @@
 #include <chrono>
 #include "testFileCreator.h"
 #include "moveFile.h"
+#include "removeFile.h"
 
 #if defined(_WIN32)
 #else 
@@ -16,6 +17,7 @@ int generator(){
 }
 
 int main() {
+    // NEW FILE? /////////////////////////////////////////////
     std::cout << "Create new file? [y/n] ";
     char toCreate;
     std::cin >> toCreate;
@@ -23,10 +25,12 @@ int main() {
     createFile(); // 5 GB; 512 MB by default
     }
 
+    // AMOUNT ////////////////////////////////////////////////
     long long amount;
     std::cout << "amount of numbers: ";
     std::cin >> amount;
 
+    // NUMBERS GENERATOR /////////////////////////////////////
     std::ofstream numbers;
     numbers.open("numbers.txt");
     if (!numbers.is_open()){
@@ -39,14 +43,9 @@ int main() {
     }
     numbers.close();
 
-    // SHEmptyRecycleBin(NULL, NULL, SHERB_NOCONFIRMATION | SHERB_NOPROGRESSUI | SHERB_NOSOUND);
-
     // START COPYING
     moveFile();
-
-
-
-
+    removeFile();
 
     return 0;
 }

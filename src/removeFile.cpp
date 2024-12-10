@@ -4,8 +4,9 @@
 #include <locale>
 #include <shlobj.h>
 #include <iostream>
+#include <ShlObj.h>
 
-// if exists -> remove -> clean trash bin
+// if exists -> remove -> clean trash bin (remove deleted file only)
 
 bool removeFile(const std::string& path) {
     BOOL result = DeleteFileA(path.c_str());
@@ -21,22 +22,16 @@ bool removeFile(const std::string& path) {
     deleteFileFromRecycleBin(path);
 }
 
-void deleteFileFromRecycleBin(const std::string& path) {
-    SHFILEOPSTRUCTA fileOp = {0};
-    char filePathBuffer[MAX_PATH + 1];
-    strncpy(filePathBuffer, path.c_str(), MAX_PATH);
-    filePathBuffer[path.size() + 1] = '\0';
 
-    fileOp.wFunc = FO_DELETE;
-    fileOp.pFrom = filePathBuffer;
-    fileOp.fFlags = FOF_ALLOWUNDO | FOF_NOCONFIRMATION | FOF_SILENT;
-
-    int result = SHFileOperationA(&fileOp);
-    if (result == 0) {
-        std::cout << "File deleted from Recycle Bin successfully." << std::endl;
+void deleteFileFromRecycleBin(const std::string& filepath) {
+    std::wstring path = stringToWstring(filepath);
+    if (DeleteFileW(path.c_str())) {
     } else {
-        std::cerr << "Failed to delete the file from Recycle Bin. Error code: " << result << std::endl;
+        std::cerr << "Failed to delete file from recycle bin: " << GetLastError() << std::endl;
     }
 }
 
-
+std::wstring stringToWstring(const std::string& str){
+    std::wstring wstr(str.begin(), str.end());
+    return wstr;
+}
