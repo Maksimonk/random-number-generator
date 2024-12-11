@@ -14,4 +14,4 @@ run: $(TARGET)
 	./$(TARGET)
 
 clean:
-	del file_speed_generator.exe numbers.txt bit_numbers.txt testFile.txt
+	del file_speed_generator.exe numbers.txt bit_numbers.txt testFile.txt final_random.txt bit_final_random.txt
