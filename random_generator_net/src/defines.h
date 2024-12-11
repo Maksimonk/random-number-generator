@@ -10,6 +10,6 @@
 
 int sniff_packet(std::string* result);
 
-int generate_randnum(char* ptr,const int lenght);
+std::string generate_randnum();
 
 #define SIZE_ETHERNET 14
