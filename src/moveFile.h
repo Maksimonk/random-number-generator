@@ -5,10 +5,17 @@
 #include <fstream>
 #include <chrono>
 #include <cstdio>
-#include <cstdio>
 #include <cstdlib>
 #include <cstring>
-void moveFile(const std::string& sourcePath = "testFile.txt", const std::string& destinationPath = "C:/Users/ddyam/Desktop/testFile.txt");
-// void moveFile(const std::string& sourcePath = "testFile.txt", const std::string& destinationPath = "D:/New folder/destination/testFile.txt");
+#include <windows.h>
+#include <lmcons.h>
+#include <string>
+#include <bitset>
+#include <string>
+
+double moveFile(const std::string &sourcePath = "testFile.txt");
+std::string getUsername();
+std::string double_to_binary(double value);
+bool fileExists(const std::string &filePath);
 
 #endif // MOVEFILE_H

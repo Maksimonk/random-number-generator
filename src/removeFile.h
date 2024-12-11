@@ -8,9 +8,7 @@
 #include <iostream>
 #include <fstream>
 
-
-bool removeFile(const std::string& path = "C:/Users/ddyam/Desktop/testFile.txt"); // true = success
-void deleteFileFromRecycleBin(const std::string& path = "C:/Users/ddyam/Desktop/testFile.txt");
-std::wstring stringToWstring(const std::string& str);
+bool removeFile(const std::string &path); // true = success
+void cleanRecycleBin();
 
 #endif // REMOVEFILE_H

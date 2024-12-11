@@ -2,13 +2,15 @@
 #include <iostream>
 #include <random> //only used for filling testFile
 #include "testFileCreator.h"
+#include <windows.h>
 
 void createFile(long long size)
 {
+    size = 1024LL * 1024LL * size;
     std::ofstream testFile("testFile.txt", std::ios::binary);
     
     if (!testFile) {
-        std::cerr << "Error of openning file for writing. Create new file failed." << std::endl;
+        std::cerr << "Error of openning file for writing. Create new file failed. Error: " << GetLastError() << std::endl;
         return;    
     }
 

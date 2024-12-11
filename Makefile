@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++14
 
 SRC = $(wildcard src/*.cpp)
 
-TARGET = generator.exe
+TARGET = file_speed_generator.exe
 
 all: clean $(TARGET) run
 
@@ -14,4 +14,4 @@ run: $(TARGET)
 	./$(TARGET)
 
 clean:
-	del generator.exe numbers.txt
+	del file_speed_generator.exe numbers.txt bit_numbers.txt testFile.txt

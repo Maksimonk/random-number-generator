@@ -30,6 +30,12 @@ C++ compiler
 
 Tools for NIST testing (NIST Statistical Test Suite)
 
+## WARNING
+
+This code involves cleaning your trash bin (maybe it doesn't clean), so you have to be careful using it. Ensure you do not have any important files in your trash bin before running this code, as it may permanently delete all items.
+
+The code is delivered as is. The authors of the code are not responsible for the harm that running the code may cause to your computer. You have to analyze the code before running it.
+
 ## Project Compilation
 
 1. Clone the repository
