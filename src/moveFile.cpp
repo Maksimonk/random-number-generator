@@ -21,7 +21,10 @@ double moveFile(const std::string &sourcePath)
     std::chrono::duration<double> duration = end - start;
 
     double timeInSeconds = duration.count();
-    std::cout << "Time to move testFile: " << timeInSeconds << " seconds" << std::endl;
+    if (timeInSeconds != 0)
+    {
+        std::cout << "Time to move testFile: " << timeInSeconds << " seconds" << std::endl;
+    }
 
     if (fileExists(destinationPath))
     {

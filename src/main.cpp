@@ -68,18 +68,18 @@ int main()
     // NEW NUMBERS APPENDING TO FILE(S)/////////////////////////////
     for (long long i = 0; i < amount; i++)
     {
-        double current = 0;
-        while (current == 0) // prevent current being equal to 0 (for small testFiles in particular)
+        createFile(1);               // 1 MB by default
+        double current = moveFile(); // time from testFile moving
+        while (current == 0)         // prevent current being equal to 0 (for small testFiles in particular)
         {
             std::this_thread::sleep_for(std::chrono::microseconds(100));
-            createFile(1); // 1 MB by default
+            createFile(1);        // 1 MB by default
             current = moveFile(); // time from testFile moving
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
         numbers << current << "\n";
         bit_numbers << double_to_binary(current) << "\n";
 
-        long long result = current * 10000000 + 11;
+        long long result = current * 10000000 + 1;
         auto result1 = 1000000000000000 % result;
         final_random << result1 << "\n";
         bit_final_random << double_to_binary(result1) << "\n";
