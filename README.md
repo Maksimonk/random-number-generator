@@ -45,9 +45,10 @@ cd random-number-generator
 ```
 2. Compile the project
 ```
+cd {file_speed || random_generator_net || random_generator_temp_cpu} // choose one folder
 make
 ```
  
 ## Running the Project
 
-No action is required. Makefile runs the Project by itself.
+No action is required for file_speed. Makefile runs this part of the Project by itself.
