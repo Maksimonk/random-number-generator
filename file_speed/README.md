@@ -1,4 +1,4 @@
-# Generation of Random Values Based on System Parameters
+# Generation of Random Values Based on Desktop Parameters
 ## Project Description
 This project aims to create a random value generator based on various system parameters such as disk read/write speed, processor temperature fluctuations, and network activity of the device. We use these parameters to generate the final random value and verify its randomness using NIST tests.
 
@@ -30,6 +30,12 @@ C++ compiler
 
 Tools for NIST testing (NIST Statistical Test Suite)
 
+## WARNING
+
+This code involves cleaning your trash bin (maybe it doesn't clean), so you have to be careful using it. Ensure you do not have any important files in your trash bin before running this code, as it may permanently delete all items.
+
+The code is delivered as is. The authors of the code are not responsible for the harm that running the code may cause to your computer. You have to analyze the code before running it.
+
 ## Project Compilation
 
 1. Clone the repository
@@ -41,8 +47,7 @@ cd random-number-generator
 ```
 make
 ```
-
+ 
 ## Running the Project
-```
-./random-number-generator
-```
+
+No action is required. Makefile runs the Project by itself.
