@@ -67,14 +67,18 @@ int main()
     // NEW NUMBERS APPENDING TO FILE(S)/////////////////////////////
     for (long long i = 0; i < amount; i++)
     {
-        createFile();                // 1 MB by default
-        double current = moveFile(); // time from testFile moving
+        createFile(1); // 1 MB by default
+        double current = 0;
+        while (current == 0) // prevent current being equal to 0 (for small testFiles in particular)
+        {
+            current = moveFile(); // time from testFile moving
+        }
         numbers << current << "\n";
         bit_numbers << double_to_binary(current) << "\n";
 
-        long long result = current * 1000000000 + 1;
-        auto result1 = 10000000000000% result;
-        final_random << current << "\n";
+        long long result = current * 10000000 + 11;
+        auto result1 = 140737488356207 % result;
+        final_random << result1 << "\n";
         bit_final_random << double_to_binary(result1) << "\n";
     }
 
@@ -86,8 +90,8 @@ int main()
     // CHECKING THAT EVERYTHING IS OK ////////////////////////
     std::ifstream check_numbers("numbers.txt");
     std::ifstream check_bit_numbers("bit_numbers.txt");
-    std::ofstream check_final_random("final_random.txt");
-    std::ofstream check_bit_final_random("bit_final_random.txt");
+    std::ifstream check_final_random("final_random.txt");
+    std::ifstream check_bit_final_random("bit_final_random.txt");
 
     if (check_numbers.is_open() && check_bit_numbers.is_open() && check_final_random.is_open() && check_bit_final_random.is_open())
     {
