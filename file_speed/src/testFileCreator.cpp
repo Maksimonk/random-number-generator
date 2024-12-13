@@ -6,7 +6,8 @@
 
 void createFile(long long size)
 {
-    size = 1024LL * 1024LL * size;
+    // size = 1024LL * 1024LL * size;
+    size = 1024LL * size; // kb
     std::ofstream testFile("testFile.txt", std::ios::binary);
     
     if (!testFile) {
