@@ -4,6 +4,7 @@
 #include "testFileCreator.h"
 #include "moveFile.h"
 #include "removeFile.h"
+#include "removeTrailingZeros.h"
 #include <thread>
 
 #if defined(_WIN32)
@@ -81,8 +82,8 @@ int main()
 
         long long result = current * 10000000 + 1;
         auto result1 = 1000000000000000 % result;
-        final_random << result1 << "\n";
-        bit_final_random << double_to_binary(result1) << "\n";
+        final_random << (result1 - 10000) << "\n";
+        bit_final_random << removeTrailingZeros(double_to_binary(result1 - 10000), 9) << "\n"; // TODO: 10000 is not for any PC
     }
 
     numbers.close();
